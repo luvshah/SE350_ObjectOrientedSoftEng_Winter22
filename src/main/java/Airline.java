@@ -15,11 +15,14 @@ public class Airline {
         name = sym;
     }
     public String getName() {return name;}
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s%s", "Airliner:", getName()));
         return sb.toString();
     }
+    @Override
     public boolean equals(Object obj) {
         if (obj == null || (getClass() != obj.getClass())) {
             return false;

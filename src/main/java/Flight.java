@@ -47,7 +47,8 @@ public class Flight {
     public Airport getDestination() {return destination;}
     public String getFlightNumber() {return flightNumber;}
     public Date getDeparture() {return departure;}
-//
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s\t\t%s", "Airline: ", getAirline().getName() + "\n"));
@@ -57,6 +58,7 @@ public class Flight {
         sb.append(String.format("%s\t\t%s", "Departure: ", getDeparture().toString()+ "\n"));
         return sb.toString();
     }
+    @Override
     public boolean equals(Object obj) {
         if (obj == null || (getClass() != obj.getClass())) {
             return false;

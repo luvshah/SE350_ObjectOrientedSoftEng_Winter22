@@ -18,11 +18,13 @@ public class Airport {
     }
     public String getSymbol() {return sym;}
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s%s", "AirPort:", getSymbol()));
         return sb.toString();
     }
+    @Override
     public boolean equals(Object obj) {
         if (obj == null || (getClass() != obj.getClass())) {
             return false;
