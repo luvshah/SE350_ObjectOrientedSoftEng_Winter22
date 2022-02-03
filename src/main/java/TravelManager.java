@@ -9,9 +9,18 @@ public class TravelManager {
         Airport Ohare = new Airport("ORD");
         Airport Laguardia = new Airport("LGA");
         Airline Blue = new Airline("Jet Blue");
-        Flight flight12345 = new Flight(Blue, Ohare, Laguardia);
+       // CommercialFlight commercialFlight12345 = new CommercialFlight(Blue, Ohare, Laguardia);
+        FlightManager flightManager = null;
+        try {
+            flightManager = FlightManager.getInstance();
+            flightManager.createFlight("CommercialFlight",Blue, Ohare, Laguardia);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        System.out.println("Printing Flight Data: \n" + flight12345.toString());
+
+
+        System.out.println("Printing CommercialFlight Data: \n" + flightManager.toString());
 
     }
 }

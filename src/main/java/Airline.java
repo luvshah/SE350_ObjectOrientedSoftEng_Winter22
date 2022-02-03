@@ -19,7 +19,7 @@ public class Airline {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s%s", "Airliner:", getName()));
+        sb.append(String.format("%s", getName()));
         return sb.toString();
     }
     @Override

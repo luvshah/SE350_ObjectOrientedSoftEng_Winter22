@@ -21,7 +21,7 @@ public class Airport {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s%s", "AirPort:", getSymbol()));
+        sb.append(String.format("%s", getSymbol()));
         return sb.toString();
     }
     @Override
