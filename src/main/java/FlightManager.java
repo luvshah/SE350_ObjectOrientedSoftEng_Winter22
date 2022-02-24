@@ -23,8 +23,17 @@ public final class FlightManager extends FlightFactory{
     public Flight createFlight(String type, Airline liner, Airport origin, Airport dest)
     {
         try {
-            flights.add(super.createFlight(type, liner, origin,dest));
-        } catch (NullParamException e) {
+            flights.add(super.createFlight(type, liner, origin,dest, 0));
+        } catch (NullParamException | BadParamException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public Flight createFlight(String type, Airline liner, Airport origin, Airport dest, int size)
+    {
+        try {
+            flights.add(super.createFlight(type, liner, origin,dest, size));
+        } catch (NullParamException | BadParamException e) {
             e.printStackTrace();
         }
         return null;

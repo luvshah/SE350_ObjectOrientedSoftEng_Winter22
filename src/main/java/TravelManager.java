@@ -14,6 +14,7 @@ public class TravelManager {
         try {
             flightManager = FlightManager.getInstance();
             flightManager.createFlight("CommercialFlight",Blue, Ohare, Laguardia);
+            flightManager.createFlight("PassengerFlight", new Airline("American"),new Airport("LAX"),new Airport("JFK"), 60);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -21,6 +22,7 @@ public class TravelManager {
 
 
         System.out.println("Printing CommercialFlight Data: \n" + flightManager.toString());
+        System.out.println("Printing PassengerFlight Data: \n" + flightManager.toString());
 
     }
 }
