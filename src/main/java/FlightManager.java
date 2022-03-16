@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class FlightManager extends FlightFactory{
+public final class FlightManager extends FlightFactory implements FlightManagerSubject{
 
     private List<Flight> flights;
     private static FlightManager instanceOfThis = null;
@@ -20,14 +20,15 @@ public final class FlightManager extends FlightFactory{
     }
     private FlightManager(){ flights = new ArrayList();}
 
-    public Flight createFlight(String type, Airline liner, Airport origin, Airport dest)
+    @Override
+    public void createFlight(String type, Airline liner, Airport origin, Airport dest)
     {
         try {
             flights.add(super.createFlight(type, liner, origin,dest, 0));
         } catch (NullParamException | BadParamException e) {
             e.printStackTrace();
         }
-        return null;
+
     }
     public Flight createFlight(String type, Airline liner, Airport origin, Airport dest, int size)
     {
@@ -36,9 +37,10 @@ public final class FlightManager extends FlightFactory{
         } catch (NullParamException | BadParamException e) {
             e.printStackTrace();
         }
+
         return null;
     }
-
+    @Override
     public Flight getFlightByNumber(String flightnum)throws BadParamException{
 
         for(Flight flight : flights){
